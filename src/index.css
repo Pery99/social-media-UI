@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Map container styles */
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .leaflet-container {
+    min-height: 60vh;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe Area utilities for mobile */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border p-4;
+  }
+
+  .input-primary {
+    @apply w-full rounded-lg border-gray-200 px-4 py-2.5 focus:border-primary-500 focus:ring-1 focus:ring-primary-500;
+  }
+}
+
+@layer utilities {
+  .floating-chat-btn {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    filter: drop-shadow(0 8px 24px rgb(59 130 246 / 0.4));
+    will-change: transform;
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1) translateZ(0);
+    }
+    50% {
+      transform: scale(1.05) translateZ(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .chat-overlay-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .chat-overlay-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+  }
+
+  .chat-overlay-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .chat-overlay-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
+}
+
+/* Hide scrollbar for mobile chat */
+.messages-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.messages-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure mobile chat takes full height */
+.mobile-chat-container {
+  height: 100dvh; /* dynamic viewport height */
+}
+
+/* Higher z-index for mobile elements */
+.mobile-z-index {
+  z-index: 9999;
+}
