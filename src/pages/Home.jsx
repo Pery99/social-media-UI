@@ -13,7 +13,6 @@ const Home = () => {
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-0 sm:px-4 py-0 sm:py-4">
           <div className="flex gap-4 relative">
-            {/* Left Sidebar - Navigation */}
             <div className="hidden lg:block w-64 sticky top-4 h-[calc(100vh-2rem)]">
               <div className="bg-white rounded-xl shadow-sm border p-4 h-full">
                 <div className="space-y-1">
@@ -21,7 +20,6 @@ const Home = () => {
                     <i className="ph-house-fill text-xl mr-4"></i>
                     Home
                   </button>
-                  {/* ...other navigation buttons... */}
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <button className="w-full bg-primary-500 text-white rounded-xl py-3 font-medium hover:bg-primary-600">
@@ -31,7 +29,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Main Content - Stories and Feed */}
             <main className="flex-1 max-w-[600px] mx-auto">
               <div className="space-y-4">
                 <Stories />
@@ -39,13 +36,11 @@ const Home = () => {
               </div>
             </main>
 
-            {/* Right Sidebar - Chat */}
             <div className={`
               fixed inset-0 lg:relative lg:w-[380px] lg:inset-auto
               ${showChat ? 'block' : 'hidden lg:block'}
               bg-black/50 lg:bg-transparent z-50 lg:z-0
             `}>
-              {/* Close button for mobile - Repositioned */}
               <button 
                 onClick={() => setShowChat(false)}
                 className="fixed top-4 left-4 p-3 bg-white/10 backdrop-blur rounded-full text-white lg:hidden z-[51]"
@@ -63,7 +58,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Mobile Chat Toggle Button */}
       {!showChat && (
         <button 
           onClick={() => setShowChat(true)}

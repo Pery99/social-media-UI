@@ -56,25 +56,6 @@
     transition: all 0.3s ease;
   }
 
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes loading {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(400%); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
   @keyframes pulse {
     0%, 100% {
       transform: scale(1) translateZ(0);
@@ -82,32 +63,6 @@
     50% {
       transform: scale(1.05) translateZ(0);
     }
-  }
-
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out;
-  }
-
-  .chat-overlay-enter {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  .chat-overlay-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.3s ease;
-  }
-
-  .chat-overlay-exit {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .chat-overlay-exit-active {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.3s ease;
   }
 }
 
