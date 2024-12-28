@@ -14,7 +14,7 @@ const Navbar = () => {
             <Logo />
             <div className="hidden md:flex items-center gap-1">
               <NavLink
-                to="/home"
+                to="/"
                 className={({ isActive }) =>
                   `px-4 py-2 rounded-lg text-sm font-medium ${
                     isActive
